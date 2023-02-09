@@ -1,6 +1,6 @@
 <template>
   <div class="page-item section">
-  <h2>Info</h2>
+  <h2>个人简介</h2>
   <div class="mu-avatar">
     <div class="mu-avatar-inner">
       <!-- <img class="img" :src="info.avatar"> -->

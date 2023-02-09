@@ -1,6 +1,6 @@
 <template>
   <div class="page-item section">
-    <h2>Profiles</h2>
+    <h2>作品</h2>
     <mu-carousel class="carousel" :cycle="cycle" :hide-controls="controls" :hide-indicators="indicators" :interval="interval"  transition="slide">
       <template v-for="(profile, index) in profiles">
         <mu-carousel-item :key=index>
@@ -12,7 +12,9 @@
                 {{profile.text}}
               </mu-card-text>
               <mu-card-actions v-if="profile.github"><a :href="profile.github" target="_blank">
-                  <mu-icon class="icon" value=":iconfont icon-GitHub"></mu-icon>{{profile.github}}</a>
+                  <mu-icon class="icon" value=":iconfont icon-github-fill"></mu-icon>
+                  <span class="url">{{profile.github}}</span>
+                </a>
               </mu-card-actions>
             </mu-card>
           </mu-container>
@@ -45,7 +47,7 @@ export default {
 <style lang="less" scoped>
   .section {
     background-color:rgb(23, 158, 140) !important;
-    color: #000;
+    // color: #000;
     .carousel {
       min-height: 50vh;
       width: 95%;
@@ -58,15 +60,43 @@ export default {
           .card {
             border-radius: 10px;
             text-align:left;
-            background-color:#f2f4f5;
+            color: #d0d2d4;
+            background-color:rgb(176, 190, 197,.665);
+            .mu-card-header {
+              padding-bottom: 0;
+            }
+            .mu-card-header-title {
+              padding: 0;
+              width: 100%;
+            }
+            .mu-card-title {
+              width: 100%;
+              color: rgb(0, 0, 0);
+              font-size: 1.3rem;
+              text-align: left;
+            }
+            .mu-card-sub-title {
+              color: rgb(19, 19, 19);
+              text-align: left;
+            }
+            .mu-card-text {
+              padding: 0 16px;
+              // letter-spacing: .07rem;
+              letter-spacing: 1px;
+              color: rgb(0, 0, 0);
+              text-align: left;
+            }
             .mu-card-actions {
-              // padding: 0;
+              padding: 0 16px;
               .icon {
                 margin-right: 10px;
                 font-size: 30px;
                 color: #000;
               }
-          }
+              .url {
+                color: #000;
+              }
+            }
           }
         }
       }

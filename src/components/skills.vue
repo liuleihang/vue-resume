@@ -1,6 +1,6 @@
 <template>
   <div class="page-item section">
-    <h2>Skills</h2>
+    <h2>技能</h2>
     <mu-container class="container">
       <transition-group name="flip-list" tag="div">
         <mu-chip v-for="item in skills" class="chip" :key="item" color="#b0bec5" text-color="rgb(56, 19, 59)">

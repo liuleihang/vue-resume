@@ -1,6 +1,6 @@
 <template>
   <div class="page-item section">
-    <h2>Career</h2>
+    <h2>职业生涯</h2>
     <div class="career">
       <template v-for="(item, index) in career">
         <div class="item" :key="index">

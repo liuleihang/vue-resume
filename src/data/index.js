@@ -1,7 +1,7 @@
 export const info = {
   name: '刘磊航',
   avatar: '',
-  introduce: '人生应有所经历',
+  introduce: '一个不断探索前端技术的90后',
   // exp: '',
   status: [
     {
@@ -25,21 +25,21 @@ export const info = {
 export const skills = ['JavaScript', 'Html5', 'Css3','Vue', 'Vue-Router', 'Vuex', 'NodeJs', 'Express',  'MongoDB', 'Mysql', 'TypeScript', 'Koa2', 'Webpack', 'Git', 'Nginx', 'Shell', 'Java', 'SpringBoot']
 export const profiles = [
   {
-    title: '中国外贸信托手机审批',
-    subTitle: '中国外贸信托手机审批',
+    title: 'fotich5',
+    subTitle: '业务流程审批webApp',
     skills: 'html css vue axios vantUI Bootstrap MongoDB express',
-    text: '本项目属于WebApp项目，企业内部移动办公审批。功能包括待办审批、流程发起、文档查看',
+    text: '本项目属于企业内部移动办公审批。功能包括待办审批、流程发起、文档查看。',
     github: ''
   },
   {
-    title: '中国金茂移动办公APP',
+    title: 'jinmao',
     subTitle: '中国金茂移动办公APP',
     skills: 'html css Bootstrap MongoDB express',
-    text: '本项目是一个企业内部移动办公项目。为企业员工提供多种移动办公功能，包括待办审批、流程发起、通讯录、行业资讯、文档查看等。帮助企业完成办公移动化，极大提高了办公效率。',
+    text: '本项目是一个集成多功能的企业移动办公项目。为企业员工提供多种移动办公功能，包括待办审批、流程发起、通讯录、行业资讯、文档查看等。帮助企业完成办公移动化，极大提高了办公效率。',
     github: ''
   },
   {
-    title: '健康廊坊app',
+    title: 'healthy',
     subTitle: '健康廊坊app',
     skills: 'html css vue vuex vux MongoDB express',
     text: '健康廊坊app是一款手机医疗保健软件。主要展示一些关于医疗、健康资讯新闻，可以评论、收藏，并且可以切换地域，显示对应的新闻。接入一些第三方，有预约挂号、献血等服务，并展示了第三方创建的活动信息。可以添加家庭成员，查看家庭成员健康状况等功能。',
@@ -49,7 +49,7 @@ export const profiles = [
     title: 'vue-resume',
     subTitle: 'vue在线简历',
     skills: 'vue vuex muse-ui vue-awesome-swiper',
-    text: 'vue个人简历展示',
+    text: '这是一个用 Vue2 开发的个人简历作品',
     github: 'https://github.com/liuleihang/vue-resume'
   }
 ]
@@ -82,7 +82,12 @@ export const contact = {
     {
       url: 'https://github.com/liueleihang',
       icon: 'icon-github-fill'
-    }/*,
+    },
+    {
+      url: 'https://juejin.cn/user/1767670425852270',
+      icon: 'icon-juejin'
+    }
+    /*,
     {
       url: '',
       icon: 'icon-sf'

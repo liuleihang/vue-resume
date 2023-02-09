@@ -1,20 +1,20 @@
 <template>
   <div class="page-item section">
-    <h2>Contact</h2>
+    <h2>联系我</h2>
     <div class="contact">
       <div class="experience">
-        <h3>Experiences</h3>
+        <h3>个人能力</h3>
         <template v-for="(item, index) in contact.experiences">
           <p class="p-item" :key="index">{{item}}</p>
         </template>
         <!-- {{contact.experience}} -->
       </div>
       <div class="evaluation">
-        <h3>Evaluation</h3>
+        <h3>自我评价</h3>
         {{contact.evaluation}}
       </div>
       <div class="socials">
-        <h3>Socias</h3>
+        <h3>社交帐号</h3>
         <div class="box">
           <template v-for="(item, index) in contact.socials">
             <a class="socials-item" :key="index" :href="item.url" target="_blank">
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="contact-me">
-        <h3>Contact Me</h3>
+        <h3>联系方式</h3>
         <a class="btn" :href="`tel:${contact.tel}`" target="_blank">
           <mu-icon class="icon" :value="`:iconfont icon-shoujihao`"></mu-icon>
           {{contact.tel}}
@@ -76,6 +76,7 @@ export default {
           background: rgba(11, 5, 48, 0.3);
           border-radius: 20px;
           text-align: center;
+          margin: 0 5px;
           .icon {
             font-size: 2rem;
             line-height: 40px;
@@ -92,9 +93,9 @@ export default {
         width: 85%;
         background: rgba(11, 5, 48, 0.3);
         border-radius: 15px;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         line-height: 30px;
-        color: rgb(148, 154, 161);
+        color: #d0d2d4;
         margin-bottom: 5px;
         text-align: left;
         text-indent: 1rem;
