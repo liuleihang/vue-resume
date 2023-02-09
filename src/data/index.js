@@ -1,16 +1,15 @@
-// import avatar from '../assets/avatar.jpeg'
 export const info = {
   name: '刘磊航',
   avatar: '',
   introduce: '人生应有所经历',
-  exp: '五年前端开发经验',
+  // exp: '',
   status: [
     {
-      icon: 'icon-icon-',
+      icon: 'icon-location',
       value: '北京'
     },
     {
-      icon: 'icon-xueli',
+      icon: 'icon-education',
       value: '本科'
     },
     // {
@@ -18,8 +17,8 @@ export const info = {
     //   value: '未婚'
     // },
     {
-      icon: 'icon-zhiwei',
-      value: '在职'
+      icon: 'icon-zhiye',
+      value: '离职'
     }
   ]
 }
@@ -82,18 +81,18 @@ export const contact = {
   socials: [
     {
       url: 'https://github.com/liueleihang',
-      icon: 'icon-GitHub'
+      icon: 'icon-github-fill'
     }/*,
     {
-      url: 'https://segmentfault.com/u/siwuweihesi',
+      url: '',
       icon: 'icon-sf'
     },
     {
-      url: 'https://www.zhihu.com/people/li-zai-rong-27/activities',
+      url: '',
       icon: 'icon-zhihu'
     } ,
     {
-      url: 'https://blog.csdn.net/weixin_43760383',
+      url: '',
       icon: 'icon-csdn'
     } */
   ]

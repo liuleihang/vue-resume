@@ -26,11 +26,11 @@
       <div class="contact-me">
         <h3>Contact Me</h3>
         <a class="btn" :href="`tel:${contact.tel}`" target="_blank">
-          <mu-icon class="icon" :value="`:iconfont icon-dianhua`"></mu-icon>
+          <mu-icon class="icon" :value="`:iconfont icon-shoujihao`"></mu-icon>
           {{contact.tel}}
         </a>
         <a class="btn" target="_blank">
-          <mu-icon class="icon" :value="`:iconfont icon-fayoujian`"></mu-icon>
+          <mu-icon class="icon" :value="`:iconfont icon-youxiang`"></mu-icon>
           {{contact.email}}
         </a>
       </div>
@@ -77,7 +77,7 @@ export default {
           border-radius: 20px;
           text-align: center;
           .icon {
-            font-size: 1.5rem;
+            font-size: 2rem;
             line-height: 40px;
             color: rgb(162, 165, 168);
           }
@@ -92,14 +92,14 @@ export default {
         width: 85%;
         background: rgba(11, 5, 48, 0.3);
         border-radius: 15px;
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         line-height: 30px;
         color: rgb(148, 154, 161);
         margin-bottom: 5px;
         text-align: left;
         text-indent: 1rem;
         .icon {
-          font-size: 1.1rem;
+          font-size: 1.5rem;
           color: rgb(210, 213, 216);
           padding: 0 10px;
         }

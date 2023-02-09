@@ -7,8 +7,8 @@ import MuseUi from 'muse-ui'
 
 import 'swiper/css/swiper.css'
 import 'muse-ui/dist/muse-ui.css'
-import './common/icons.css'
-import './common/style.css'
+import './assets/iconfont/iconfont.css'
+import './assets/css/style.css'
 
 Vue.use(VueAwesomeSwiper)
 Vue.use(MuseUi)
