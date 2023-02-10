@@ -7,7 +7,10 @@
       <swiper-slide><career/></swiper-slide>
       <swiper-slide><contact/></swiper-slide> -->
       <swiper-slide v-for="item in pageList" :key="item.name">
-        <component :is="item.name"></component>
+          <!-- <transition name="fade">
+            <component :is="item.name"></component>
+          </transition> -->
+          <component :is="item.name"></component>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -86,5 +89,11 @@ export default {
 }
 .resume .swiper-container {
   height: 100vh;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

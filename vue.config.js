@@ -7,9 +7,10 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = 'vue个人简历' // page title
+const name = '刘磊航的个人简历' // page title
 module.exports = {
-  publicPath: '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue-resume/' : '/', //服务器nginx上使用
+  // publicPath: '/',  //github pages中使用
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
@@ -22,5 +23,13 @@ module.exports = {
         'common': resolve('src/common')
       }
     }
-	}
+	},
+  chainWebpack: config => {
+    config
+    .plugin('html')
+    .tap(args => {
+      args[0].title = name
+      return args
+    })
+  }
 }

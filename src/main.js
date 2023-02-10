@@ -1,17 +1,19 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+// import router from './router'
 import store from './store'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import MuseUi from 'muse-ui'
 
-import 'swiper/css/swiper.css'
 import 'muse-ui/dist/muse-ui.css'
+import 'swiper/css/swiper.css'
+// import animated  from 'animate.css'
 import './assets/iconfont/iconfont.css'
 import './assets/css/style.css'
 
 Vue.use(VueAwesomeSwiper)
 Vue.use(MuseUi)
+// Vue.use(animated)
 
 Vue.config.productionTip = false
 
@@ -20,7 +22,7 @@ Vue.config.productionTip = false
 }).$mount('#app') */
 new Vue({
   el: '#app',
-  router,
+  // router,
   store,
   components: { App },
   render: h => h(App)
