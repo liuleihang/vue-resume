@@ -9,8 +9,10 @@ function resolve(dir) {
 
 const name = '刘磊航的个人简历' // page title
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue-resume/' : '/', //服务器nginx上使用
-  // publicPath: '/',  //github pages中使用
+  //域名子路径
+  // publicPath: process.env.NODE_ENV === 'production' ? '/vue-resume/' : '/',
+  //域名根路径、github pages
+  publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',

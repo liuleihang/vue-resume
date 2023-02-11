@@ -49,7 +49,7 @@ export const profiles = [
     title: 'vue-resume',
     subTitle: 'vue在线简历',
     skills: 'vue vuex muse-ui vue-awesome-swiper',
-    text: '这是一个用 Vue2 开发的个人简历作品',
+    text: 'vue2 开发的线上个人简历作品，并发布到了阿里云服务器',
     github: 'https://github.com/liuleihang/vue-resume'
   }
 ]
@@ -74,7 +74,7 @@ export const contact = {
     '熟悉Linux系统常用命令，有编写基础shell脚本的经验；',
     '熟悉Nginx的基本使用，进行反向代理和负载均衡配置；'
   ],
-  evaluation: '具备独立分析解决问题的能力强烈的自我驱动力,爱好知识社区',
+  evaluation: '为人乐观积极向上，性格开朗,容易与人相处,注重团队协作,爱好知识社区',
   // hobby: [],
   email: 'liuleihang@163.com',
   tel: '13146075762',
