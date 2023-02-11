@@ -74,7 +74,7 @@ export const contact = {
     '熟悉Linux系统常用命令，有编写基础shell脚本的经验；',
     '熟悉Nginx的基本使用，进行反向代理和负载均衡配置；'
   ],
-  evaluation: '为人乐观积极向上，性格开朗,容易与人相处,注重团队协作,爱好知识社区',
+  evaluation: '为人乐观积极向上，性格开朗，容易与人相处，注重团队协作，爱好知识社区。',
   // hobby: [],
   email: 'liuleihang@163.com',
   tel: '13146075762',
