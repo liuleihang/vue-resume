@@ -14,7 +14,7 @@ module.exports = {
     [
       "import",
       {
-        libraryName: 'lodash',
+        libraryName: 'lodash-es',
         libraryDirectory: "",
         camel2DashComponentName: false,
       }
