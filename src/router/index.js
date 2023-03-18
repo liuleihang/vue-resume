@@ -9,11 +9,6 @@ const routes = [
     name: 'Home',
     component: () => import('@/views/home/index.vue'),
   },
-  {
-    path: '/skills',
-    name: 'Skills',
-    component: () => import('@/views/resume/skills/index.vue'),
-  },
 ]
 const router = new VueRouter({
   routes
