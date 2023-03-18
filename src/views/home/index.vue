@@ -1,7 +1,15 @@
 <template>
   <div class="resume" @mousewheel="rollScroll">
-    <el-carousel ref="carousel" class="carousel" height="100vh" direction="vertical" :autoplay="false" :interval="3000"
-      :loop="true">
+    <el-carousel
+      name="carousel"
+      ref="carousel" 
+      class="carousel" 
+      :height="height" 
+      :direction="direction" 
+      :autoplay="autoplay" 
+      :interval="interval" 
+      :loop="loop"
+    >
       <el-carousel-item v-for="item in pageList" :key="item.neme">
         <component :is="item.name"></component>
       </el-carousel-item>
@@ -32,6 +40,11 @@ export default {
   },
   data() {
     return {
+      height: '100vh',
+      direction: 'vertical',
+      autoplay: true,
+      interval: 5000,
+      loop: true,
       pageList: [
         {
           name: 'info',
@@ -56,6 +69,9 @@ export default {
       ]
     }
   },
+  mounted(){
+    if (this.$refs.carousel) this.slideBanner()
+  },
   methods: {
     rollScroll(event) {
       let _that = this;
@@ -71,6 +87,60 @@ export default {
         }, 300);
       } else {
       }
+    }, 
+    //是否自动播放
+    stopAuto() {
+      this.autoplay = false
+    },
+    startAuto() {
+      this.autoplay = true
+    },
+    // 轮播手滑切换
+    slideBanner() {
+      //选中的轮播图
+      var box = document.querySelector('.el-carousel__container');
+      //手指滑动起点Y坐标
+      var startPoint = 0;
+      //手指滑动终点Y坐标
+      var stopPoint = 0;
+      //重置坐标
+      var resetPoint = function () {
+        startPoint = 0;
+        stopPoint = 0;
+      }
+      //手指按下
+      box.addEventListener("touchstart", function (e) {
+        //手指点击位置的Y坐标
+        startPoint = e.changedTouches[0].pageY;
+      });
+      //手指滑动
+      box.addEventListener("touchmove", function (e) {
+        //手指滑动后终点位置Y的坐标
+        stopPoint = e.changedTouches[0].pageY;
+      });
+      //当手指抬起的时候，判断图片滚动离左右的距离
+      let that = this
+      box.addEventListener("touchend", function (e) {
+        if (stopPoint == 0 || startPoint - stopPoint == 0) {
+          resetPoint();
+          that.startAuto();
+          return;
+        }
+        // 下划上一页
+        if (startPoint - stopPoint > 0) {
+          resetPoint();
+          that.$refs.carousel.next();
+          that.startAuto();
+          return;
+        }
+        // 上划下一页
+        if (startPoint - stopPoint < 0) {
+          resetPoint();
+          that.$refs.carousel.prev();
+          that.startAuto();
+          return;
+        }
+      });
     }
   }
 }
