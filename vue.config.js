@@ -8,6 +8,7 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
+const pageTitle = '刘磊航的个人简历' // page title
 // 需要通过 cross-env 定义环境变量
 const isProduction = process.env.NODE_ENV === "production";
 module.exports = defineConfig({
@@ -65,6 +66,12 @@ module.exports = defineConfig({
       args[0].exclude = 'node_modules';
       return args;
     })
+    config
+    .plugin('html')
+    .tap(args => {
+      args[0].title = pageTitle
+      return args
+    })
     config.when(
       process.env.NODE_ENV === "production",
       (config) => {
@@ -101,4 +108,3 @@ module.exports = defineConfig({
     )
   },
 })
-
