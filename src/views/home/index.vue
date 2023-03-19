@@ -1,23 +1,25 @@
 <template>
   <div class="resume" @mousewheel="rollScroll">
     <el-carousel
-      name="carousel"
-      ref="carousel" 
-      class="carousel" 
-      :height="height" 
+      name="pageCarousel"
+      ref="pageCarousel" 
+      class="pageCarousel" 
+      :height="height"
       :direction="direction" 
       :autoplay="autoplay" 
       :interval="interval" 
       :loop="loop"
+      @change="changePage"
     >
-      <el-carousel-item v-for="item in pageList" :key="item.neme">
-        <component :is="item.name"></component>
+      <el-carousel-item v-for="(item, index) in pageList" :key="item.neme">
+        <component :is="item.name" :ref="item.name" :pageIndex="index"></component>
       </el-carousel-item>
     </el-carousel>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import info from '@/views/resume/info'
 import skills from '@/views/resume/skills'
 import profiles from '@/views/resume/profiles'
@@ -69,10 +71,14 @@ export default {
       ]
     }
   },
+  computed: {
+    ...mapState(['activeIndex'])
+  },
   mounted(){
-    if (this.$refs.carousel) this.slideBanner()
+    if (this.$refs.pageCarousel) this.slideBanner();
   },
   methods: {
+    ...mapActions(['changeActiveIndex']),
     rollScroll(event) {
       let _that = this;
       // chrome、ie使用的wheelDelta，火狐使用detail
@@ -82,8 +88,8 @@ export default {
         _that.timeOut = setTimeout(() => {
           _that.timeOut = null;
           scrollVal > 0
-            ? _that.$refs.carousel.prev()
-            : _that.$refs.carousel.next();
+            ? _that.$refs.pageCarousel.prev()
+            : _that.$refs.pageCarousel.next();
         }, 300);
       } else {
       }
@@ -129,18 +135,24 @@ export default {
         // 下划上一页
         if (startPoint - stopPoint > 0) {
           resetPoint();
-          that.$refs.carousel.next();
+          that.$refs.pageCarousel.next();
           that.startAuto();
           return;
         }
         // 上划下一页
         if (startPoint - stopPoint < 0) {
           resetPoint();
-          that.$refs.carousel.prev();
+          that.$refs.pageCarousel.prev();
           that.startAuto();
           return;
         }
       });
+    },
+    changePage(index){
+      this.changeActiveIndex(index);
+      if (index !== 1) {
+        this.$refs.skills[0].clearShuffle();
+      }
     }
   }
 }
@@ -152,7 +164,7 @@ export default {
   height: 100vh;
   overflow: hidden;
 
-  .carousel {
+  .pageCarousel {
     height: 100vh;
   }
 }

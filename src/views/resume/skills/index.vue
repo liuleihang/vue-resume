@@ -12,31 +12,44 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { skills } from '@/data/index.js'
 import { shuffle } from 'lodash-es'
 export default {
   name: 'skills',
+  props: ['pageIndex'],
   data() {
     return {
-      skills: skills,
+      skills,
     }
   },
   computed: {
+    ...mapState(['activeIndex'])
   },
-  mounted(){
-    this.shuffleSkills()
-    this.time = setInterval(() => {
-      this.shuffleSkills()
-    }, 5000)
-  },
-  beforeDestroy () {
-    console.log('clear')
-    // clearInterval(this.time)
+  watch: {
+    activeIndex: {
+      handler(newVal){
+        console.log('skills>>> activeIndex>>> ',newVal,this.pageIndex)
+        if (newVal === this.pageIndex) {
+          this.startShuffle();
+        }
+      },
+      // immediate: true //初始化立即执行(data里面定义了currentIndex后就立即执行handle)
+    }
   },
   methods: {
     shuffleSkills(){
       this.skills = shuffle(this.skills)
     },
+    clearShuffle(){
+      clearInterval(this.time)
+    },
+    startShuffle(){
+      this.shuffleSkills()
+      this.time = setInterval(() => {
+        this.shuffleSkills()
+      }, 3000)
+    }
   }
 }
 </script>

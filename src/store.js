@@ -12,10 +12,17 @@ export default new Vuex.Store({
     skills,
     profiles,
     career,
-    contact
+    contact,
+    activeIndex: 0
   },
   mutations: {
+    setActiveIndex(state, index){
+      state.activeIndex = index;
+    }
   },
   actions: {
+    changeActiveIndex({ commit }, index){
+      commit('setActiveIndex',index);
+    }
   }
 })
