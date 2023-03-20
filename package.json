@@ -5,6 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --report",
+    "vue-ui": "vue ui",
+    "webpack-output": "vue inspect --mode production >  webpack.config.production.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

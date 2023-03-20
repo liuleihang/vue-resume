@@ -24,13 +24,9 @@ module.exports = defineConfig({
       new BundleAnalyzerPlugin(),
       // 打包分析
       new SpeedMeasurePlugin(),
-      // new IgnorePlugin({
-      //   resourceRegExp: /^\.\/locale$/,
-      //   contextRegExp: /element-ui$/,
-      // })
     ],
     resolve: {
-      extensions: ['.vue', '.js', '.json', 'scss', 'css'],
+      extensions: ['.vue', '.js', '.json', 'less', 'css'],
       alias: {
         '@': resolve('src')
       }
